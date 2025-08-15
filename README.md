@@ -46,7 +46,7 @@ Gemini AI – Natural language understanding.
 
 ⚙ Installation
 # Clone the repository
-git clone https://github.com/yourusername/LucidAI.git
+git clone https://github.com/AnyPerson1/Lucid.git
 cd LucidAI
 
 # Install Python dependencies
