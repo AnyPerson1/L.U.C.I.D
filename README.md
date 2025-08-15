@@ -1,6 +1,10 @@
-LucidAI
+THIS PROJECT USES ONLY ONE GEMINI API, YOU MIGHT CONFRONT SOME ERRORS DURING USAGE. IF YOU WANT LOCAL AI ASSISTANT, SEE THE Lucid-LOCAL REPOSITORY.
 
-Speak. Command. Control.
+
+
+# LucidAI
+
+# Speak. Command. Control.
 
 LucidAI is a voice-powered AI assistant that listens, understands, and controls your PC with nothing but your words.
 Powered by Faster-Whisper, Gemini AI, and a C++ automation core, it bridges natural speech and low-level system commands — all in real time.
