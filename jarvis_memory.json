@@ -1,0 +1,42 @@
+{
+  "visual_studio_trigger": {
+    "value": "open Visual Studio",
+    "timestamp": "2025-08-15T23:18:00.519887",
+    "access_count": 11
+  },
+  "user_name": {
+    "value": "Arda",
+    "timestamp": "2025-08-18T16:42:31.492915",
+    "access_count": 0
+  },
+  "music_preference": {
+    "value": "heavy metal\" \n\nvoice_message \"I remember you as Arda. You're 18 years old and work as a software engineer with proficiency in C++, C#, R, and you're quite the guitarist too! You have an affinity for heavy metal music.",
+    "timestamp": "2025-08-18T16:42:31.997933",
+    "access_count": 0
+  },
+  "age": {
+    "value": "18",
+    "timestamp": "2025-08-18T16:42:31.594213",
+    "access_count": 0
+  },
+  "occupation": {
+    "value": "software engineer",
+    "timestamp": "2025-08-18T16:42:31.695334",
+    "access_count": 0
+  },
+  "programming_languages": {
+    "value": "C++,C-Sharp,R",
+    "timestamp": "2025-08-18T16:42:31.796293",
+    "access_count": 0
+  },
+  "instrument": {
+    "value": "guitar",
+    "timestamp": "2025-08-18T16:42:31.897407",
+    "access_count": 0
+  },
+  "task": {
+    "value": "test",
+    "timestamp": "2025-08-18T16:04:20.462324",
+    "access_count": 2
+  }
+}
