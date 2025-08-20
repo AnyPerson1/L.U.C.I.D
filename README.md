@@ -1,54 +1,45 @@
-THIS PROJECT USES ONLY ONE GEMINI API, YOU MIGHT CONFRONT SOME ERRORS DURING USAGE. IF YOU WANT LOCAL AI ASSISTANT, SEE THE Lucid-LOCAL REPOSITORY.
+LucidAI
+Speak. Command. Control.
 
+LucidAI is a local AI assistant that listens, interprets, and controls your PC entirely via voice.
+Designed for offline use, it bridges natural language and system commands in real time with precision.
 
+Features
 
-# LucidAI
+Voice Recognition – Converts speech to text using a fast, accurate STT engine.
+Command Understanding – Interprets your words into executable actions.
+Automation Core – Handles keypresses, text input, and mouse actions directly through a C++ backend.
+Voice Feedback – Provides real-time responses via TTS.
+Full Control – From launching applications to complete desktop automation.
 
-# Speak. Command. Control.
+How It Works
 
-LucidAI is a voice-powered AI assistant that listens, understands, and controls your PC with nothing but your words.
-Powered by Faster-Whisper, Gemini AI, and a C++ automation core, it bridges natural speech and low-level system commands — all in real time.
+Listen – Captures your voice input through the microphone.
 
-🚀 Features
+Transcribe – Converts speech to text using the local STT engine.
 
-🎙 Voice Recognition – Uses Faster-Whisper for fast & accurate transcription.
+Interpret – AI engine translates text into predefined commands.
 
-🧠 AI Understanding – Interprets commands with Gemini AI.
+Execute – C++ automation module triggers the corresponding system actions.
 
-⌨ Full Automation – Executes keypresses, text typing, and mouse clicks with a C++ backend.
-
-🔊 Voice Feedback – Responds in real time using TTS.
-
-⚡ Real-Time Control – From launching apps to full desktop automation.
-
-🛠 How It Works
-
-Listen – LucidAI captures your voice via microphone.
-
-Transcribe – Faster-Whisper converts speech to text.
-
-Interpret – Gemini AI translates your words into predefined commands.
-
-Execute – C++ engine triggers keyboard/mouse actions.
-
-Respond – TTS delivers spoken feedback instantly.
+Respond – TTS module delivers instant spoken feedback.
 
 Example:
 
 You: "Open Spotify"
 LucidAI → Presses Windows key → Types "Spotify" → Hits Enter
 
-📦 Tech Stack
+Tech Stack
 
 Python – Voice recognition, AI integration, TTS.
 
-C++ – Direct Windows API calls for input simulation.
+C++ – Direct system calls for input simulation.
 
-Faster-Whisper – High-speed speech-to-text engine.
+Faster-Whisper – High-speed, local speech-to-text engine.
 
-Gemini AI – Natural language understanding.
+Local AI Model – Natural language understanding without internet dependency.
 
-⚙ Installation
+Installation
 # Clone the repository
 git clone https://github.com/AnyPerson1/Lucid.git
 cd LucidAI
@@ -60,12 +51,12 @@ pip install -r requirements.txt
 cd cpp_module
 make  # or use your preferred compiler
 
-▶ Usage
+Usage
 python main.py
 
 
-Then simply speak your command, and LucidAI will handle the rest.
+Then speak your command, and LucidAI will execute actions and respond locally.
 
-📜 License
+License
 
-MIT License – Feel free to use, modify, and share.
+MIT License – Free to use, modify, and distribute.
