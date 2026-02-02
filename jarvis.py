@@ -45,7 +45,7 @@ CONFIG = {
     "LANGUAGE": "en"
 }
 
-API_KEY = "AIzaSyA5zRObGZg4aKzxgvYxK-H1ANe3oj_h7D8" # Geçerli bir anahtar ile değiştirin
+API_KEY = "AIzaSyA5zRObGZg4aKzxgvYxK-H1ANe3oj_h7D8"
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
 
 is_running = True
@@ -242,7 +242,6 @@ class JarvisAI:
         self.use_ollama = CONFIG["USE_OLLAMA"] and OLLAMA_AVAILABLE
     
     def get_ollama_response(self, user_command):
-        """Get AI response using Ollama Client (GPT-OSS-120B, Turbo)"""
         if not OLLAMA_AVAILABLE:
             print("[WARNING] Ollama library not available")
             return None
@@ -329,7 +328,7 @@ class JarvisSystem:
     
     def start_cpp_process(self):
         try:
-            cpp_executable = "jarvis.exe" # C++ programınızın yolu
+            cpp_executable = "jarvis.exe" # c++ shi
             if not os.path.exists(cpp_executable):
                 print(f"[HATA] Kontrol programı bulunamadı: {cpp_executable}")
                 return
@@ -360,10 +359,10 @@ class JarvisSystem:
             exec(code, globals())
             output = captured_output.getvalue()
             sys.stdout = old_stdout
-            return f"✅ Python kodu başarıyla çalıştırıldı:\n{output}" if output else "✅ Python kodu başarıyla çalıştırıldı."
+            return f"Python kodu başarıyla çalıştırıldı:\n{output}" if output else "Python kodu başarıyla çalıştırıldı."
         except Exception as e:
             sys.stdout = old_stdout
-            return f"❌ Python çalıştırma hatası: {str(e)}"
+            return f"Python çalıştırma hatası: {str(e)}"
 
     def stop_cpp_process(self):
         if self.cpp_process and self.cpp_process.poll() is None:
@@ -421,7 +420,7 @@ class JarvisCore:
                 elif command.startswith('python:'):
                     code = command.split(':', 1)[1].strip('"')
                     result = self.system.execute_python_code(code)
-                    success = "✅" in result
+                    success = "ok" in result
 
                 elif command.startswith(('voice_message:', 'voice_feedback:')):
                     message = command.split(':', 1)[1].strip('"')
@@ -467,7 +466,6 @@ class JarvisCore:
             else:
                 self.tts.speak("Bu isteği işlerken bir sorunla karşılaştım.")
         finally:
-            # 🔥 her iş bitince resetle
             self.audio_buffer = np.array([], dtype=np.float32)
             self.is_speaking = False
             self.silence_start_time = None
@@ -488,25 +486,18 @@ class JarvisCore:
 
                 rms = np.sqrt(np.mean(audio_chunk**2))
 
-            # DEBUG
-            # print(f"[DEBUG] is_speaking={self.is_speaking}, rms={rms:.5f}")
-
+            # PYH section (Pull your hair (yeah i just found that))
                 if self.is_speaking:
                     if rms > CONFIG["SILENCE_THRESHOLD"]:
-                        # hala konuşuyor → buffer’a ekle
                         self.silence_start_time = None
                         self.audio_buffer = np.concatenate([self.audio_buffer, audio_chunk.flatten()])
                     else:
-                        # sessizlik başladı
                         if self.silence_start_time is None:
                             self.silence_start_time = time.time()
 
                         if time.time() - self.silence_start_time > CONFIG["SILENCE_DURATION"]:
-                            # konuşma bitti → işleme
                             self.process_audio(self.audio_buffer.copy())
-                            # process_audio içinde reset garanti
                 else:
-                    # yeni konuşma başlıyor
                     if rms > CONFIG["SILENCE_THRESHOLD"]:
                         self.is_speaking = True
                         self.audio_buffer = audio_chunk.flatten()
